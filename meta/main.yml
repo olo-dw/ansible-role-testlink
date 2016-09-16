@@ -1,7 +1,6 @@
 ---
 dependencies:
   - geerlingguy.apache
-  - geerlingguy.php
   - palkan.postgresql
 
 galaxy_info:
