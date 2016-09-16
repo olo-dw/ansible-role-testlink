@@ -5,3 +5,10 @@
 
 - include: installation.yml
   when: not version_installed.stat.exists
+
+- name: Check version directory
+  stat: path="/var/testlink-{{testlink_version}}"
+  register: version_directory
+
+- include: directory.yml
+  when: not version_directory.stat.exists
