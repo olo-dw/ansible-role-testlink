@@ -1,0 +1,4 @@
+---
+testlink_version: 1.9.15
+teslink_package_url: "http://freefr.dl.sourceforge.net/project/testlink/TestLink%201.9/TestLink%201.9.15/testlink-{{ testlink_version }}.tar.gz"
+

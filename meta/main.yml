@@ -1,0 +1,22 @@
+---
+dependencies:
+  - geerlingguy.apache
+  - geerlingguy.php
+  - palkan.postgresql
+
+galaxy_info:
+  author: 
+  description: Testlink Installation
+  company: "Deveryware"
+  license: "license"
+  min_ansible_version: 1.9
+  platforms:
+  - name: Debian
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - all
+  galaxy_tags:
+    - development
+    - packaging

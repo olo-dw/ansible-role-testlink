@@ -1,0 +1,9 @@
+---
+- name: download and uncompress testlink
+  unarchive: src={{ teslink_package_url }} dest=/var/www remote_src=yes
+
+- name: create link
+  file:
+    src: "/var/www/testlink-{{ testlink_version }}"
+    dest: "/var/www/testlink"
+    state: link
