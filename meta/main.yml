@@ -1,7 +1,5 @@
 ---
-dependencies:
-  - geerlingguy.apache
-  - palkan.postgresql
+dependencies: []
 
 galaxy_info:
   author: 

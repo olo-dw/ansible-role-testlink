@@ -1,13 +1,16 @@
 ---
-- name: Installation - download testlink
+- name: Installation - Download testlink.
   get_url:
     url: "{{ teslink_package_url }}"
     dest: "/tmp/testlink.tar.gz"
 
-- name: Installation - unarchive testlink
-  unarchive: src="/tmp/testlink.tar.gz" dest="/var/www"
+- name: Installation - Unarchive testlink.
+  unarchive:
+    src: "/tmp/testlink.tar.gz"
+    dest: "/var/www"
+    copy: no
 
-- name: create link
+- name: Installation - Create link.
   file:
     src: "/var/www/testlink-{{ testlink_version }}"
     dest: "/var/www/testlink"
