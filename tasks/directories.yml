@@ -1,9 +1,0 @@
----
-- name: Directories - Testlink directory
-  file: path="{{ testlink_directory }}" state=directory
-
-- name: Directories - Logs directory
-  file: path="{{ testlink_directory }}/log" state=directory
-
-- name: Directories - upload directory
-  file: path="{{ testlink_directory }}/upload" state=directory

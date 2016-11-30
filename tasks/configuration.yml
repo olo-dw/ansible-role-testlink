@@ -1,0 +1,43 @@
+---
+- name: Configuration - Ensure testlink directory is present.
+  file: path="{{ testlink_directory }}" state=directory
+
+- name: Configuration - Ensure links are created.
+  file:
+    src: "{{ testlink_directory }}"
+    dest: "{{ item }}"
+    owner: "{{ testlink_user }}"
+    group: "{{ testlink_group }}"
+    state: link
+    mode: 'g+rwx'
+  with_items:
+  - '/var/www/testlink'
+  - "{{ testlink_var_dir }}"
+
+- name: Configuration - Ensure directories writeable by group.
+  file: path="{{ item }}" mode='0775' state=directory
+  with_items:
+  - "{{ testlink_var_dir }}/logs/"
+  - "{{ testlink_var_dir }}/upload_area/"
+  - "{{ testlink_var_dir }}/gui/templates_c"
+
+- name: Configuration - Ensure log link is created.
+  file:
+    src: "{{ testlink_directory }}/logs"
+    dest: "/var/log/testlink"
+    owner: "{{ testlink_user }}"
+    group: "{{ testlink_group }}"
+    state: link
+
+- name: Configuration - Ensure config_db.inc.php is present.
+  template:
+    src: config_db.inc.php.j2
+    dest: "{{ testlink_directory }}/config_db.inc.php"
+    mode: 0664
+
+- name: Configuration - Ensure testlink ownership.
+  file:
+    path: "{{ testlink_directory }}"
+    owner: "{{ testlink_user }}"
+    group: "{{ testlink_group }}"
+    recurse: yes

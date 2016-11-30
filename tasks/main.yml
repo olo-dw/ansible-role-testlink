@@ -1,14 +1,27 @@
 ---
-- name: Check version installation
-  stat: path="/var/www/testlink-{{testlink_version}}"
-  register: version_installed
+- name: Ensure testlink group is present.
+  group: name="{{ testlink_group }}" state=present
+
+- name: Ensure testlink user is present.
+  user: name="{{ testlink_user }}" group="{{ testlink_group }}" state=present
+
+- name: Retrieve testlink group members.
+  getent: database=group key="{{ testlink_group }}"
+
+- name: Ensure webserver user is in the testlink group.
+  user: name="{{ testlink_webserver_user }}" groups="{{ testlink_group }}"
+  when: not testlink_webserver_user in getent_group['{{ testlink_group }}'][2]
 
 - include: installation.yml
-  when: not version_installed.stat.exists
+  when: testlink_version | lower != 'latest'
 
-- name: Check version directory
-  stat: path="/var/testlink-{{testlink_version}}"
-  register: version_directory
+- include: latest.yml
+  when: testlink_version | lower == 'latest'
 
-- include: directory.yml
-  when: not version_directory.stat.exists
+- include: configuration.yml
+
+- include: "{{ testlink_dbms }}.yml"
+  when: testlink_dbms != False
+
+- name: Ensure install directory is absent.
+  file: path='/var/www/testlink/install' state=directory

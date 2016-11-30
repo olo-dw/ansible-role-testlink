@@ -1,0 +1,25 @@
+---
+- name: Mysql - Ensure database is created.
+  mysql_db:
+    name: "{{ testlink_db_name }}"
+    encoding: utf8
+    collation: utf8_general_ci
+    state: present
+  register: db_created
+
+- name: Mysql - Import SQL scripts.
+  mysql_db:
+    name: "{{ testlink_db_name }}"
+    target: "{{ testlink_directory }}/install/sql/{{ testlink_dbms }}/{{ item }}"
+    state: import
+  with_items:
+  - testlink_create_tables.sql
+  - testlink_create_default_data.sql
+  when: db_created.changed
+
+- name: Mysql - Ensure testlink db user is present.
+  mysql_user:
+    name: "{{ testlink_db_user }}"
+    password: "{{ testlink_db_password }}"
+    priv: "{{ testlink_db_name }}.*:ALL"
+    state: present
