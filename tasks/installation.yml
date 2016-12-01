@@ -15,3 +15,4 @@
     dest: "/var/www"
     copy: no
   when: not version_installed.stat.exists
+  register: testlink_unarchived

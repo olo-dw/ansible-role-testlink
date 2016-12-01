@@ -41,3 +41,4 @@
     owner: "{{ testlink_user }}"
     group: "{{ testlink_group }}"
     recurse: yes
+  when: testlink_git_clone.changed or testlink_unarchived.changed
