@@ -29,11 +29,14 @@
     group: "{{ testlink_group }}"
     state: link
 
-- name: Configuration - Ensure config_db.inc.php is present.
+- name: Configuration - Ensure config files are present.
   template:
-    src: config_db.inc.php.j2
-    dest: "{{ testlink_directory }}/config_db.inc.php"
+    src: "{{ item }}.j2"
+    dest: "{{ testlink_directory }}/{{ item }}"
     mode: 0664
+  with_items:
+  - 'config_db.inc.php'
+  - 'custom_config.inc.php'
 
 - name: Configuration - Ensure testlink ownership.
   file:
@@ -41,4 +44,5 @@
     owner: "{{ testlink_user }}"
     group: "{{ testlink_group }}"
     recurse: yes
-  when: testlink_git_clone.changed or testlink_unarchived.changed
+  when: (testlink_git_clone is defined and testlink_git_clone.changed) or
+        (testlink_unarchived is defined and testlink_unarchived.changed)

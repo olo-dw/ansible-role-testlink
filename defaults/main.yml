@@ -1,6 +1,6 @@
 ---
 testlink_version: 1.9.15
-teslink_package_url: "http://freefr.dl.sourceforge.net/project/testlink/TestLink%201.9/TestLink%20{{ testlink_version }}/testlink-{{ testlink_version }}.tar.gz"
+testlink_package_url: "http://freefr.dl.sourceforge.net/project/testlink/TestLink%201.9/TestLink%20{{ testlink_version }}/testlink-{{ testlink_version }}.tar.gz"
 testlink_repo_url: "https://github.com/TestLinkOpenSourceTRMS/testlink-code.git"
 
 testlink_directory: "/var/www/testlink-{{ testlink_version }}"
@@ -14,5 +14,7 @@ testlink_db_user: 'testlink'
 testlink_db_password: 't3stl1nk'
 testlink_db_host: 'localhost'
 testlink_db_prefix: ''
+
+testlink_ldap_enabled: False
 
 testlink_webserver_user: 'www-data'
