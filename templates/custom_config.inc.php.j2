@@ -14,4 +14,9 @@ $tlCfg->authentication['ldap_bind_passwd'] = "{{ testlink_ldap_bind_passwd }}";
 /** Enable/disable Users to create accounts on login page */
 $tlCfg->user_self_signup = FALSE;
 {% endif %}
+
+{% if testlink_force_https is defined %}
+$tlCfg->force_https = "{{ testlink_force_https }}";
+{% endif %}
+
 ?>

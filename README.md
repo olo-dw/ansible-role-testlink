@@ -52,6 +52,10 @@ To activate the ldap configuration you need to turn `testlink_ldap_enabled` into
     testlink_ldap_bind_dn: 'domain.account@company.com'
     testlink_ldap_bind_passwd: 'PassWorD'
 
+### Force https
+
+    testlink_force_https: 'true'
+    
 ## License
 
 MIT
