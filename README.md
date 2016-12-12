@@ -4,7 +4,8 @@
 
 * Mysql 5.6
 * apache2
-* php5-common, php5-cli, php5-mysql, libapache2-mod-php5
+* php5-common, php5-cli, php5-mysql, libapache2-mod-php5, php5-gd
+* php5-ldap (if needed)
 
 ## Usage
 
@@ -42,15 +43,27 @@ Initial credentials are `admin/admin`
 ## Advanced variables
 
 ### LDAP
-To activate the ldap configuration you need to turn `testlink_ldap_enabled` into True and set the other parameters below:
+To activate the ldap configuration you need to turn `testlink_authentication_method` into 'LDAP' and set the other parameters below:
 
-    testlink_ldap_enabled: True
+    testlink_authentication_method: 'LDAP'
     testlink_ldap_server: 'ldap.company.com'
     testlink_ldap_port: 636
     testlink_ldap_root_dn: 'dc=company,dc=com'
-    testlink_ldap_uid_field: 'sAMAccountName'
     testlink_ldap_bind_dn: 'domain.account@company.com'
     testlink_ldap_bind_passwd: 'PassWorD'
+    // Following configuration parameters are used to build
+    // ldap filter and ldap attributes used by ldap_search()
+    // filter => "(&$t_ldap_organization($t_ldap_uid_field=$t_username))";
+    // attributess => array( $t_ldap_uid_field, 'dn' );
+    testlink_ldap_organization: ''
+    testlink_ldap_uid_field: 'uid'
+
+Set to `'true'` to activate the automatic user creation. If user does not exist on DB, but can be get from LDAP, the user will be created automatically with default user role.
+
+    testlink_ldap_automatic_user_creation: 'false'
+    testlink_ldap_email_field: 'mail'
+    testlink_ldap_firstname_field: 'givenname'
+    testlink_ldap_lastname_field: 'sn'
 
 ### Force https
 
