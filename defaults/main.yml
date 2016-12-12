@@ -15,6 +15,6 @@ testlink_db_password: 't3stl1nk'
 testlink_db_host: 'localhost'
 testlink_db_prefix: ''
 
-testlink_ldap_enabled: False
+testlink_authentication_method: 'DB'
 
 testlink_webserver_user: 'www-data'
