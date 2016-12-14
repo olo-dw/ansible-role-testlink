@@ -25,6 +25,10 @@ $tlCfg->authentication['ldap_automatic_user_creation'] = "{{ testlink_ldap_autom
 $tlCfg->authentication['ldap_email_field'] = "{{ testlink_ldap_email_field | default('mail') }}";
 $tlCfg->authentication['ldap_firstname_field'] = "{{ testlink_ldap_firstname_field | default('givenname') }}";
 $tlCfg->authentication['ldap_surname_field'] = "{{ testlink_ldap_lastname_field | default('sn') }}";
+// to prevent a testlink bug with function getUserFieldsFromLDAP
+$tlCfg->authentication['ldap'][1]['ldap_email_field'] = "{{ testlink_ldap_email_field | default('mail') }}";
+$tlCfg->authentication['ldap'][1]['ldap_firstname_field'] = "{{ testlink_ldap_firstname_field | default('givenname') }}";
+$tlCfg->authentication['ldap'][1]['ldap_surname_field'] = "{{ testlink_ldap_lastname_field | default('sn') }}";
 {% endif %}
 
 {% if testlink_force_https is defined %}
