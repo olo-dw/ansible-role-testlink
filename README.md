@@ -68,7 +68,14 @@ Set to `'true'` to activate the automatic user creation. If user does not exist 
 ### Force https
 
     testlink_force_https: 'true'
-    
+
+### SMTP
+
+    testlink_smtp_host: 'smtp.company.com'
+    testlink_tl_admin_email: 'admin.testlink@company.com'
+    testlink_from_email: 'testlink@company.com'
+    testlink_return_path_email: 'noreply.testlink@company.com'
+
 ## License
 
 MIT

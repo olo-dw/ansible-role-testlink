@@ -4,6 +4,13 @@
 
 $tlCfg->config_check_warning_mode = ’SILENT’;
 
+/* [SMTP] */
+$g_smtp_host          = "{{ testlink_smtp_host | default('[smtp_host_not_configured]') }}" ;  # SMTP server MUST BE configured
+$g_tl_admin_email     = "{{ testlink_tl_admin_email | default('[testlink_sysadmin_email_not_configured]') }}" ; # for problem/error notification
+$g_from_email         = "{{ testlink_from_email | default('[from_email_not_configured]') }}" ;  # email sender
+$g_return_path_email  = "{{ testlink_return_path_email | default ('[return_path_email_not_configured]') }}" ;
+
+/* [User Authentication] */
 $tlCfg->authentication['method'] = "{{ testlink_authentication_method }}";
 {% if testlink_authentication_method == 'LDAP' %}
 $tlCfg->authentication['ldap'][1]['ldap_server'] = "{{ testlink_ldap_server }}";
