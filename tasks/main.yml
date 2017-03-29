@@ -24,4 +24,4 @@
   when: testlink_dbms != False
 
 - name: Ensure install directory is absent.
-  file: path='/var/www/testlink/install' state=directory
+  file: path='/var/www/testlink/install' state=absent
