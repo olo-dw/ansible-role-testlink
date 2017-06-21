@@ -15,10 +15,14 @@
   - "{{ testlink_var_dir }}"
 
 - name: Configuration - Ensure directories writeable by group.
-  file: path="{{ item }}" mode='0775' state=directory
+  file:
+    path: "{{ item }}"
+    mode: '0775'
+    state: directory
   with_items:
   - "{{ testlink_var_dir }}/logs/"
   - "{{ testlink_var_dir }}/upload_area/"
+  - "{{ testlink_var_dir }}/upload_area/executions"
   - "{{ testlink_var_dir }}/gui/templates_c"
 
 - name: Configuration - Ensure log link is created.
