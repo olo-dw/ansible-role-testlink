@@ -48,5 +48,5 @@
     owner: "{{ testlink_user }}"
     group: "{{ testlink_group }}"
     recurse: yes
-  when: (testlink_git_clone is defined and testlink_git_clone.changed) or
+  when: (testlink_git_result is defined and testlink_git_result.changed) or
         (testlink_unarchived is defined and testlink_unarchived.changed)

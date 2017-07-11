@@ -8,4 +8,5 @@
     dest: "/var/www/testlink-{{testlink_version}}"
     update: yes
     force: yes
-  register: testlink_git_clone
+  register: testlink_git_result
+  changed_when: "testlink_git_result.after|default('after') != testlink_git_result.before|default('before')"
