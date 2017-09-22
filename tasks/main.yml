@@ -12,15 +12,15 @@
   user: name="{{ testlink_webserver_user }}" groups="{{ testlink_group }}"
   when: not testlink_webserver_user in getent_group['{{ testlink_group }}'][2]
 
-- include: installation.yml
+- include_tasks: installation.yml
   when: testlink_version | lower != 'latest'
 
-- include: latest.yml
+- include_tasks: latest.yml
   when: testlink_version | lower == 'latest'
 
-- include: configuration.yml
+- include_tasks: configuration.yml
 
-- include: "{{ testlink_dbms }}.yml"
+- include_tasks: "{{ testlink_dbms }}.yml"
   when: testlink_dbms != False
 
 - name: Ensure install directory is absent.
