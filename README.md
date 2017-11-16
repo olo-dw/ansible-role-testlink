@@ -76,6 +76,13 @@ Set to `'true'` to activate the automatic user creation. If user does not exist 
     testlink_from_email: 'testlink@company.com'
     testlink_return_path_email: 'noreply.testlink@company.com'
 
+### Import file max size
+
+Maximum uploadfile size to importing stuff in TL. Also check your PHP settings, default is usually 2MBs (2097152 bytes).
+Unit BYTES is required by MAX_FILE_SIZE HTML option.
+
+    testlink_import_file_max_size_bytes: '409600'
+
 ## License
 
 MIT

@@ -42,4 +42,8 @@ $tlCfg->authentication['ldap'][1]['ldap_surname_field'] = "{{ testlink_ldap_last
 $tlCfg->force_https = "{{ testlink_force_https }}";
 {% endif %}
 
+{% if testlink_import_file_max_size_bytes is defined %}
+$tlCfg->import_file_max_size_bytes = "{{ testlink_import_file_max_size_bytes | default('409600') }}";
+{% endif %}
+
 ?>
