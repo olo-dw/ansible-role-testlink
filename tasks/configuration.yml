@@ -23,6 +23,8 @@
   - "{{ testlink_var_dir }}/logs/"
   - "{{ testlink_var_dir }}/upload_area/"
   - "{{ testlink_var_dir }}/upload_area/executions"
+  - "{{ testlink_var_dir }}/upload_area/execution_tcsteps"
+  - "{{ testlink_var_dir }}/upload_area/nodes_hierarchy"
   - "{{ testlink_var_dir }}/gui/templates_c"
 
 - name: Configuration - Ensure log link is created.
