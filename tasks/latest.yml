@@ -6,6 +6,7 @@
   git:
     repo: "{{ testlink_repo_url }}"
     dest: "/var/www/testlink-{{testlink_version}}"
+    version: "{{ testlink_repo_version }}"
     update: yes
     force: yes
   register: testlink_git_result

@@ -2,6 +2,7 @@
 testlink_version: 1.9.15
 testlink_package_url: "http://freefr.dl.sourceforge.net/project/testlink/TestLink%201.9/TestLink%20{{ testlink_version }}/testlink-{{ testlink_version }}.tar.gz"
 testlink_repo_url: "https://github.com/TestLinkOpenSourceTRMS/testlink-code.git"
+testlink_repo_version: 'testlink_1_9'
 
 testlink_directory: "/var/www/testlink-{{ testlink_version }}"
 testlink_user: 'testlink'
