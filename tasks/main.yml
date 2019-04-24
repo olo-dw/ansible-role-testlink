@@ -1,15 +1,24 @@
 ---
 - name: Ensure testlink group is present.
-  group: name="{{ testlink_group }}" state=present
+  group:
+    name: "{{ testlink_group }}"
+    state: present
 
 - name: Ensure testlink user is present.
-  user: name="{{ testlink_user }}" group="{{ testlink_group }}" state=present
+  user:
+    name: "{{ testlink_user }}"
+    group: "{{ testlink_group }}"
+    state: present
 
 - name: Retrieve testlink group members.
-  getent: database=group key="{{ testlink_group }}"
+  getent:
+    database: group
+    key: "{{ testlink_group }}"
 
 - name: Ensure webserver user is in the testlink group.
-  user: name="{{ testlink_webserver_user }}" groups="{{ testlink_group }}"
+  user:
+    name: "{{ testlink_webserver_user }}"
+    groups: "{{ testlink_group }}"
   when: not testlink_webserver_user in getent_group['{{ testlink_group }}'][2]
 
 - include_tasks: installation.yml
