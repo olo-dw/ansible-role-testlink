@@ -5,7 +5,7 @@
 
 - name: Installation - Download testlink.
   get_url:
-    url: "{{ teslink_package_url }}"
+    url: "{{ testlink_package_url }}"
     dest: "/tmp/testlink.tar.gz"
   when: not version_installed.stat.exists
 
