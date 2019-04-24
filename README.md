@@ -20,10 +20,10 @@ Initial credentials are `admin/admin`
       - role: testlink
         testlink_version: 'latest'
 
-## Default variables
+## Default variables
 
     testlink_version: 1.9.15
-    testlink_package_url: "http://freefr.dl.sourceforge.net/project/testlink/TestLink%201.9/TestLink%201.9.15/testlink-1.9.15.tar.gz"
+    testlink_package_url: "https://sourceforge.net/project/testlink/TestLink%201.9/TestLink%201.9.15/testlink-1.9.15.tar.gz"
     testlink_repo_url: "https://github.com/TestLinkOpenSourceTRMS/testlink-code.git"
 
     testlink_directory: "/var/www/testlink-1.9.15"
