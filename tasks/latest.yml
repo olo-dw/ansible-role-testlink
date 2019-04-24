@@ -1,6 +1,8 @@
 ---
 - name: Latest - Ensure git is installed.
-  apt: package="git" state=present
+  apt:
+    package: "git"
+    state: present
 
 - name: Latest - git clone.
   git:
