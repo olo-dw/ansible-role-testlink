@@ -1,6 +1,6 @@
 ---
 testlink_version: 1.9.15
-testlink_package_url: "https://sourceforge.net/project/testlink/TestLink%201.9/TestLink%20{{ testlink_version }}/testlink-{{ testlink_version }}.tar.gz"
+testlink_package_url: "https://sourceforge.net/projects/testlink/files/TestLink%201.9/TestLink%20{{ testlink_version }}/testlink-{{ testlink_version }}.tar.gz/download"
 testlink_repo_url: "https://github.com/TestLinkOpenSourceTRMS/testlink-code.git"
 testlink_repo_version: 'testlink_1_9'
 
