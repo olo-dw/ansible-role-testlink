@@ -1,7 +1,7 @@
 ---
 - name: Installation - Check version installation.
   stat:
-    pathi: "/var/www/testlink-{{testlink_version}}"
+    path: "{{ testlink_directory }}"
   register: version_installed
 
 - name: Installation - Download testlink.

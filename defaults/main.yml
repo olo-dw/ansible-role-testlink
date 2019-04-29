@@ -4,7 +4,6 @@ testlink_package_url: "https://sourceforge.net/projects/testlink/files/TestLink%
 testlink_repo_url: "https://github.com/TestLinkOpenSourceTRMS/testlink-code.git"
 testlink_repo_version: 'testlink_1_9'
 
-testlink_directory: "/var/www/testlink-{{ testlink_version }}"
 testlink_user: 'testlink'
 testlink_group: "{{ testlink_user }}"
 testlink_var_dir: '/var/testlink'

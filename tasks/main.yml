@@ -24,6 +24,10 @@
     groups: "{{ testlink_group }}"
   when: not testlink_webserver_user in getent_group['{{ testlink_group }}'][2]
 
+- name: Ensure testlink_directory is set.
+  set_fact:
+    testlink_directory: "/var/www/testlink-{{ testlink_version }}"
+
 - include_tasks: installation.yml
   when: testlink_version | lower != 'latest'
 
