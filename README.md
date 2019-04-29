@@ -16,15 +16,11 @@ Initial credentials are `admin/admin`
     - hosts: servers
       roles:
       - role: testlink
-        testlink_version: 'latest'
 
 ## Default variables
 
     testlink_version: 1.9.15
-    testlink_package_url: "https://sourceforge.net/project/testlink/TestLink%201.9/TestLink%201.9.15/testlink-1.9.15.tar.gz"
-    testlink_repo_url: "https://github.com/TestLinkOpenSourceTRMS/testlink-code.git"
 
-    testlink_directory: "/var/www/testlink-1.9.15"
     testlink_user: 'testlink'
     testlink_group: 'testlink'
     testlink_var_dir: '/var/testlink'
@@ -39,6 +35,15 @@ Initial credentials are `admin/admin`
     testlink_webserver_user: 'www-data'
 
 ## Advanced variables
+
+### Latest Version
+
+You may prefer to install the very latest version still in development from the github repository. In that case, you just have to set `testlink_version: latest`. You can also set the url and the branch:
+
+    testlink_version: latest
+    testlink_repo_url: "https://github.com/TestLinkOpenSourceTRMS/testlink-code.git"
+    testlink_repo_version: 'testlink_1_9'
+
 
 ### PHP modules
 
