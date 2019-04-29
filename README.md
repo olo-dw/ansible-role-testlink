@@ -4,8 +4,10 @@
 
 * Mysql 5.6
 * apache2
-* php5-common, php5-cli, php5-mysql, libapache2-mod-php5, php5-gd
-* php5-ldap (if needed)
+* php-common, php-cli, php-mysql, libapache2-mod-php, php-gd, php-mbstring
+* php-ldap (if needed)
+
+PHP > 5.5 It will be better if you use PHP 7.2.x
 
 ## Usage
 
