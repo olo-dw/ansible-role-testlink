@@ -4,10 +4,6 @@
 
 * Mysql 5.6
 * apache2
-* php-common, php-cli, php-mysql, libapache2-mod-php, php-gd, php-mbstring
-* php-ldap (if needed)
-
-PHP > 5.5 It will be better if you use PHP 7.2.x
 
 ## Usage
 
@@ -43,6 +39,23 @@ Initial credentials are `admin/admin`
     testlink_webserver_user: 'www-data'
 
 ## Advanced variables
+
+### PHP modules
+
+By default this role ensures that mandatory php modules below are installed:
+
+    php-common, php-cli, libapache2-mod-php, php-gd, php-mbstring
+
+And these optionnal php modules:
+
+    php-ldap, php-mysql
+
+You can override this tweaking respectively the variables below:
+
+    * testlink_php_modules
+    * testlink_php_extra_modules
+
+PHP > 5.5 It will be better if you use PHP 7.2.x
 
 ### LDAP
 To activate the ldap configuration you need to turn `testlink_authentication_method` into 'LDAP' and set the other parameters below:

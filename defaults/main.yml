@@ -16,6 +16,17 @@ testlink_db_password: 't3stl1nk'
 testlink_db_host: 'localhost'
 testlink_db_prefix: ''
 
+testlink_php_modules:
+  - php-common
+  - php-cli
+  - php-curl
+  - php-gd
+  - php-mbstring
+  - libapache2-mod-php
+testlink_php_extra_modules:
+  - php-mysql
+  - php-ldap
+
 testlink_authentication_method: 'DB'
 
 testlink_webserver_user: 'www-data'

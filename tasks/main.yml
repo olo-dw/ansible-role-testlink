@@ -1,4 +1,7 @@
 ---
+- name: Ensure PHP prerequisites are present.
+  include_tasks: php.yml
+
 - name: Ensure testlink group is present.
   group:
     name: "{{ testlink_group }}"

@@ -1,0 +1,11 @@
+---
+- name: PHP - Ensure modules are installed
+  apt:
+    name: "{{ testlink_php_modules }}"
+    state: present
+
+- name: PHP - Ensure extra modules are installed
+  apt:
+    name: "{{ testlink_php_extra_modules }}"
+    state: present
+  when: testlink_php_extra_modules is defined and testlink_php_extra_modules != ''
