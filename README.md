@@ -19,7 +19,7 @@ Initial credentials are `admin/admin`
 
 ## Default variables
 
-    testlink_version: 1.9.15
+    testlink_version: 1.9.19
 
     testlink_user: 'testlink'
     testlink_group: 'testlink'
