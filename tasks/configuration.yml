@@ -1,6 +1,8 @@
 ---
 - name: Configuration - Ensure testlink directory is present.
-  file: path="{{ testlink_directory }}" state=directory
+  file:
+    path: "{{ testlink_directory }}"
+    state: directory
 
 - name: Configuration - Ensure links are created.
   file:
