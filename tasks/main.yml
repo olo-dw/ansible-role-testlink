@@ -32,8 +32,13 @@
 - include_tasks: "{{ testlink_dbms }}.yml"
   when: testlink_dbms != False
 
-- name: Ensure install directory is absent.
-  file:
+- name: stat install directory.
+  stat:
     path: '/var/www/testlink/install'
-    state: absent
-  changed_when: False
+  register: testlink_install
+
+- name: Ensure install directory is absent.
+  command: "mv /var/www/testlink/install /var/www/testlink/install.origin"
+  args:
+    creates: "/var/www/testlink/install.origin"
+  when: testlink_install.stat.exists
