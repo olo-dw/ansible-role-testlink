@@ -6,7 +6,7 @@ testlink_repo_version: 'testlink_1_9'
 
 testlink_user: 'testlink'
 testlink_group: "{{ testlink_user }}"
-testlink_app_dir: '/var/www/testlink'
+testlink_root_dir: '/var/www'
 testlink_var_dir: '/var/testlink'
 
 testlink_dbms: 'mysql'

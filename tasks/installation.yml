@@ -13,7 +13,7 @@
 - name: Installation - Unarchive testlink.
   unarchive:
     src: "/tmp/testlink.tar.gz"
-    dest: "/var/www"
+    dest: "{{ testlink_root_dir }}"
     copy: no
   when: not version_installed.stat.exists
   register: testlink_unarchived

@@ -23,6 +23,7 @@ Initial credentials are `admin/admin`
 
     testlink_user: 'testlink'
     testlink_group: 'testlink'
+    testlink_root_dir: '/var/www'
     testlink_var_dir: '/var/testlink'
 
     testlink_dbms: 'mysql'

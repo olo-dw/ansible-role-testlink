@@ -24,6 +24,10 @@
     groups: "{{ testlink_group }}"
   when: not testlink_webserver_user in getent_group['{{ testlink_group }}'][2]
 
+- name: Ensure testlink_app_dir is set.
+  set_fact:
+    testlink_app_dir: "{{ testlink_root_dir }}/testlink"
+
 - name: Ensure testlink_install_dir is set.
   set_fact:
     testlink_install_dir: "{{ testlink_app_dir }}-{{ testlink_version }}"
