@@ -2,7 +2,7 @@
 // {{ ansible_managed }}
 // this is your custom configuration file custom_config.inc.php
 
-$tlCfg->config_check_warning_mode = ’SILENT’;
+$tlCfg->config_check_warning_mode = "SILENT";
 
 /* [SMTP] */
 $g_smtp_host          = "{{ testlink_smtp_host | default('[smtp_host_not_configured]') }}" ;  # SMTP server MUST BE configured
