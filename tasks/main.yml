@@ -26,7 +26,7 @@
 
 - name: Ensure testlink_install_dir is set.
   set_fact:
-    testlink_install_dir: "/var/www/testlink-{{ testlink_version }}"
+    testlink_install_dir: "{{ testlink_app_dir }}-{{ testlink_version }}"
 
 - include_tasks: installation.yml
   when: testlink_version | lower != 'latest'
@@ -41,11 +41,11 @@
 
 - name: stat install directory.
   stat:
-    path: '/var/www/testlink/install'
+    path: "{{ testlink_app_dir }}/install"
   register: testlink_install
 
 - name: Ensure install directory is absent.
-  command: "mv /var/www/testlink/install /var/www/testlink/install.origin"
+  command: "mv {{ testlink_app_dir }}/install {{ testlink_app_dir }}/install.origin"
   args:
-    creates: "/var/www/testlink/install.origin"
+    creates: "{{ testlink_app_dir }}/install.origin"
   when: testlink_install.stat.exists

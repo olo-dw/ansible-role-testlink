@@ -13,7 +13,7 @@
     state: link
     mode: 'g+rwx'
   with_items:
-  - '/var/www/testlink'
+  - "{{ testlink_app_dir }}"
   - "{{ testlink_var_dir }}"
 
 - name: Configuration - Ensure directories writeable by group.

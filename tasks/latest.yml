@@ -7,7 +7,7 @@
 - name: Latest - git clone.
   git:
     repo: "{{ testlink_repo_url }}"
-    dest: "/var/www/testlink-{{testlink_version}}"
+    dest: "{{ testlink_app_dir }}-{{testlink_version}}"
     version: "{{ testlink_repo_version }}"
     update: yes
     force: yes
