@@ -10,7 +10,7 @@
 - name: Mysql - Import SQL scripts.
   mysql_db:
     name: "{{ testlink_db_name }}"
-    target: "{{ testlink_directory }}/install/sql/{{ testlink_dbms }}/{{ item }}"
+    target: "{{ testlink_install_dir }}/install/sql/{{ testlink_dbms }}/{{ item }}"
     state: import
   with_items:
   - testlink_create_tables.sql

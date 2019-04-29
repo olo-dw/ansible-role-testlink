@@ -1,12 +1,12 @@
 ---
 - name: Configuration - Ensure testlink directory is present.
   file:
-    path: "{{ testlink_directory }}"
+    path: "{{ testlink_install_dir }}"
     state: directory
 
 - name: Configuration - Ensure links are created.
   file:
-    src: "{{ testlink_directory }}"
+    src: "{{ testlink_install_dir }}"
     dest: "{{ item }}"
     owner: "{{ testlink_user }}"
     group: "{{ testlink_group }}"
@@ -31,7 +31,7 @@
 
 - name: Configuration - Ensure log link is created.
   file:
-    src: "{{ testlink_directory }}/logs"
+    src: "{{ testlink_install_dir }}/logs"
     dest: "/var/log/testlink"
     owner: "{{ testlink_user }}"
     group: "{{ testlink_group }}"
@@ -40,7 +40,7 @@
 - name: Configuration - Ensure config files are present.
   template:
     src: "{{ item }}.j2"
-    dest: "{{ testlink_directory }}/{{ item }}"
+    dest: "{{ testlink_install_dir }}/{{ item }}"
     mode: 0664
   with_items:
   - 'config_db.inc.php'
@@ -48,7 +48,7 @@
 
 - name: Configuration - Ensure testlink ownership.
   file:
-    path: "{{ testlink_directory }}"
+    path: "{{ testlink_install_dir }}"
     owner: "{{ testlink_user }}"
     group: "{{ testlink_group }}"
     recurse: yes
