@@ -3,6 +3,7 @@ testlink_version: 1.9.19
 testlink_package_url: "https://sourceforge.net/projects/testlink/files/TestLink%201.9/TestLink%20{{ testlink_version }}/testlink-{{ testlink_version }}.tar.gz/download"
 testlink_repo_url: "https://github.com/TestLinkOpenSourceTRMS/testlink-code.git"
 testlink_repo_version: 'testlink_1_9'
+testlink_validate_certs: yes
 
 testlink_user: 'testlink'
 testlink_group: "{{ testlink_user }}"

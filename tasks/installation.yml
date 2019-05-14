@@ -8,6 +8,7 @@
   get_url:
     url: "{{ testlink_package_url }}"
     dest: "/tmp/testlink.tar.gz"
+    validate_certs: "{{ testlink_validate_certs }}"
   when: not version_installed.stat.exists
 
 - name: Installation - Unarchive testlink.
