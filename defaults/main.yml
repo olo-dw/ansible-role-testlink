@@ -24,6 +24,7 @@ testlink_php_modules:
   - php-gd
   - php-mbstring
   - libapache2-mod-php
+  - php-xml
 testlink_php_extra_modules:
   - php-mysql
   - php-ldap

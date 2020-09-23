@@ -50,7 +50,7 @@ You may prefer to install the very latest version still in development from the 
 
 By default this role ensures that mandatory php modules below are installed:
 
-    php-common, php-cli, libapache2-mod-php, php-gd, php-mbstring
+    php-common, php-cli, libapache2-mod-php, php-gd, php-mbstring, php-xml
 
 And these optionnal php modules:
 
